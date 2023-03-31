@@ -1,0 +1,52 @@
+{
+  "name": "photoswipe",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "style": "dist/css/index.css",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./style.css": "./dist/css/index.css",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "browser": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./lightbox": {
+      "types": "./dist/lightbox/index.d.ts",
+      "browser": "./dist/lightbox/index.js",
+      "import": "./dist/lightbox/index.js",
+      "require": "./dist/lightbox/index.cjs"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ],
+      "lightbox": [
+        "./dist/lightbox/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint:fix": "eslint --ext .ts,.tsx . --fix",
+    "clean": "rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@types/node": "18.15.11",
+    "autoprefixer": "^10.4.14",
+    "eslint": "8.37.0",
+    "eslint-config-custom": "workspace:0.0.0",
+    "postcss": "^8.4.21",
+    "tsconfig": "workspace:0.0.0",
+    "tsup": "6.7.0",
+    "typescript": "5.0.3"
+  }
+}
